@@ -4,7 +4,21 @@
 	<title>New User</title>
 </head>
 <body>
+	
 
+	<%= form_for @user do |f| %>
+		<%= f.label :username, "Username: " %>
+		<%= f.text_field :username, placeholder: "username" %>
+		<%= f.label :email, "Email: " %>
+		<%= f.text_field :email, placeholder: "example@email.com" %>
+		<%= f.label :password, "Password: " %>
+		<%= f.password_field :password %>
+		<%= f.submit "Create User" %>
+	<% end %>
+
+
+
+	<!--
 	<%= form_tag('/users', method: :post) do %>
 		<div>
 			<%= label_tag(:username, "Username: ") %>
@@ -22,7 +36,7 @@
 			<%= submit_tag("Create User") %>
 		</div>
 	<% end %>
-
+	-->
 	<!-- <form method="POST" action="/users" accept-charset="UTF-8">
 		<p>
 			<label for="username">Username: </label>
